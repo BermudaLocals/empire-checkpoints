@@ -1,0 +1,3 @@
+CHECKPOINT: 20260621_212200
+Agents online: 54
+LexAI health: {"status":"ok","service":"lexai","version":"3.0.0","env":"production"}
