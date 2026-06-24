@@ -1,0 +1,119 @@
+# ═══════════════════════════════════════════════════════
+# DOLLAR DOUBLE EMPIRE — NGINX ROUTING
+# All services accessible globally
+# ═══════════════════════════════════════════════════════
+
+# KUSH Brain / Agent Zero
+server {
+    listen 80;
+    server_name agent.nvme.live kush.nvme.live;
+    location / { proxy_pass http://localhost:5080; proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host; }
+}
+
+# nvme.live (rebuilding — serve maintenance page)
+server {
+    listen 80;
+    server_name nvme.live www.nvme.live;
+    location / { proxy_pass http://localhost:3005;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr; }
+}
+
+# LexAI
+server {
+    listen 80;
+    server_name lexai.nvme.live;
+    location / { proxy_pass http://localhost:3006;
+        proxy_set_header Host $host; }
+}
+
+# Sound Empire
+server {
+    listen 80;
+    server_name sound.nvme.live soundempire.nvme.live;
+    location / { proxy_pass http://localhost:3009;
+        proxy_set_header Host $host; }
+}
+
+# Epic Studios
+server {
+    listen 80;
+    server_name studio.nvme.live epic.nvme.live;
+    location / { proxy_pass http://localhost:3011;
+        proxy_set_header Host $host; }
+}
+
+# AI Influencer Studio (OmniPulse flagship SaaS)
+server {
+    listen 80;
+    server_name influencer.nvme.live agi.nvme.live;
+    location / { proxy_pass http://localhost:8001;
+        proxy_set_header Host $host; }
+}
+
+# Dominion Hub
+server {
+    listen 80;
+    server_name dominion.nvme.live;
+    location / { proxy_pass http://localhost:4000;
+        proxy_set_header Host $host; }
+}
+
+# Worker Dashboard
+server {
+    listen 80;
+    server_name workers.nvme.live;
+    location / { proxy_pass http://localhost:9000;
+        proxy_set_header Host $host; }
+}
+
+# Empire Broker
+server {
+    listen 80;
+    server_name broker.nvme.live;
+    location / { proxy_pass http://localhost:3008;
+        proxy_set_header Host $host; }
+}
+
+# SwarmNet
+server {
+    listen 80;
+    server_name swarm.nvme.live swarmnet.nvme.live;
+    location / { proxy_pass http://localhost:3001;
+        proxy_set_header Host $host; }
+}
+
+# Agency API
+server {
+    listen 80;
+    server_name agency.nvme.live api.nvme.live;
+    location / { proxy_pass http://localhost:3003;
+        proxy_set_header Host $host; }
+}
+
+# Nexus Backend
+server {
+    listen 80;
+    server_name nexus.nvme.live;
+    location / { proxy_pass http://localhost:8002;
+        proxy_set_header Host $host; }
+}
+
+# Sales / Landing
+server {
+    listen 80;
+    server_name sales.nvme.live empire.nvme.live;
+    location / { proxy_pass http://localhost:8888;
+        proxy_set_header Host $host; }
+}
+
+# Viral Music Creator
+server {
+    listen 80;
+    server_name viral.nvme.live music.nvme.live;
+    location / { proxy_pass http://localhost:5081;
+        proxy_set_header Host $host; }
+}

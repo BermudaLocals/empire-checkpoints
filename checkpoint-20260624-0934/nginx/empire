@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name _;
+    location /observer { rewrite ^/observer(/.*)?$ $1 break; proxy_pass http://localhost:3025; proxy_set_header Host $host; }
+    location /audit { rewrite ^/audit(/.*)?$ $1 break; proxy_pass http://localhost:3014; proxy_set_header Host $host; }
+    location /nvme { rewrite ^/nvme(/.*)?$ $1 break; proxy_pass http://localhost:3000; proxy_set_header Host $host; }
+    location /lexai { rewrite ^/lexai(/.*)?$ $1 break; proxy_pass http://localhost:3001; proxy_set_header Host $host; }
+    location /swiftpay { rewrite ^/swiftpay(/.*)?$ $1 break; proxy_pass http://localhost:3002; proxy_set_header Host $host; }
+    location /agent-zero { proxy_pass http://localhost:5080; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection upgrade; proxy_set_header Host $host; }
+    location / { proxy_pass http://localhost:3030; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; }
+}

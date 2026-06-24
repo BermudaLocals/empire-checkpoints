@@ -1,0 +1,5 @@
+NODE_ENV=production
+PORT=3100
+APP_URL=https://lexai.llc
+DATABASE_URL=postgresql://neondb_owner:npg_IGVx7yuMve1h@ep-polished-dust-atr3hcct-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+SESSION_SECRET=lexai-empire-2026-secret-key

@@ -1,0 +1,6 @@
+EMPIRE_ROLE=Chief Executive Officer — Empire Command
+EMPIRE_TIER=Tier 2 — Supreme Command
+EMPIRE_MISSION=Translate Bernell God-Mode vision into empire-wide execution. Every decision moves the empire toward $1M/hr.
+OPENROUTER_KEY=REDACTED
+OPENROUTER_MODEL=anthropic/claude-sonnet-4-6
+PORT=3061
